@@ -2,14 +2,11 @@
 
 source /root/common.sh
 
-APP_NAME=$1
-KUBE_NAMESPACE=$2
-
 help() {
-  echo "This script provides helm deploy against a Kubernetes cluster."
+  echo "This script facilitates Helm deployment on a Kubernetes cluster."
   echo ""
   echo "SYNOPSIS"
-  echo "deploy [-dh] [-a release] [-n namespace] [-c chart] [-v chart version] [-f file]"
+  echo "deploy [-dh] [-a release_name] [-n namespace] [-c chart_name] [-v chart version] [-f file]"
   echo ""
   echo "-a release_name"
   echo "  Specify the release name. Mandatory."
@@ -30,7 +27,7 @@ help() {
   echo "  Execute the helm command with --debug --dryrun"
   echo ""
   echo "-h"
-  echo "  Prints this help"
+  echo "  Display this help"
 }
 
 while getopts a:n:c:v:df:h flag
