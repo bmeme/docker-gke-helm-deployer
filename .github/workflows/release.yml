@@ -41,7 +41,7 @@ jobs:
         id: push
         run: |
           {
-            TAG=$(cat Dockerfile| grep FROM | awk -F: '{print $2}');\
+            TAG=$(cat Dockerfile | grep com.bmeme.project.version | awk -F\' '{print $2}');\
             docker push ${{ env.registry }}/${{ env.repository }}:${TAG}; \
             docker push ${{ env.registry }}/${{ env.repository }}:latest; \
           }
