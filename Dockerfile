@@ -21,7 +21,9 @@ RUN set -eux; \
   mv /tmp/linux-amd64/helm /usr/bin/helm; \
   rm -rf /tmp/helm.tar.gz /tmp/linux-amd64; \
   \
+  # Enable kubectl
   gcloud components install kubectl; \
   \
+  # Remove backups
   rm -rf /google-cloud-sdk/.install/.backup; \
   rm -f /google-cloud-sdk/bin/kubectl.*

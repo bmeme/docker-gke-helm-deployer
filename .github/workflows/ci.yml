@@ -37,7 +37,7 @@ jobs:
         id: build
         run: |
           {
-            TAG=$(cat Dockerfile| grep FROM | awk -F: '{print $2}');\
+            TAG=$(cat Dockerfile | grep com.bmeme.project.version | awk -F\' '{print $2}');\
             \
             docker build \
               -t ${{ env.registry }}/${{ env.repository }}:${TAG} \
