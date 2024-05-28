@@ -1,6 +1,6 @@
 FROM google/cloud-sdk:455.0.0-alpine
 LABEL com.bmeme.project.family='GKE-Helm Deployer Image' \
-  com.bmeme.project.version='455.0.0-3.14.0' \
+  com.bmeme.project.version='455.0.0-3.14.1' \
   com.bmeme.maintainer.1='Daniele Piaggesi <daniele.piaggesi@bmeme.com>' \
   com.bmeme.maintainer.2='Roberto Mariani <roberto.mariani@bmeme.com>' \
   com.bmeme.refreshedat='2024-05-28'
@@ -19,6 +19,7 @@ RUN set -eux; \
   apk --no-cache upgrade; \
   apk --no-cache add \
     make \
+    docker-cli-compose \
   ; \
   # Installing Helm 3
   curl -o /tmp/helm.tar.gz https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz; \
