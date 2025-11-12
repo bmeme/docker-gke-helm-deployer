@@ -1,10 +1,10 @@
-FROM alpine/helm:3.16.1 as helm
-FROM google/cloud-sdk:495.0.0-alpine
+FROM alpine/helm:3.19.0 AS helm
+FROM google/cloud-sdk:547.0.0-alpine
 LABEL com.bmeme.project.family='GKE-Helm Deployer Image' \
-  com.bmeme.project.version='495.0.0-3.16.1' \
+  com.bmeme.project.version='547.0.0-3.19.0' \
   com.bmeme.maintainer.1='Daniele Piaggesi <daniele.piaggesi@bmeme.com>' \
   com.bmeme.maintainer.2='Roberto Mariani <roberto.mariani@bmeme.com>' \
-  com.bmeme.refreshedat='2024-10-03'
+  com.bmeme.refreshedat='2025-11-12'
 
 ## Adding Helm
 COPY --from=helm /usr/bin/helm /usr/bin/helm
